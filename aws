@@ -1,0 +1,12 @@
+#!/bin/bash
+sudo apt -y update
+sudo apt -y install ruby
+wget https://aws-codedeploy-ap-south-1.s3.ap-south-1.amazonaws.com/latest/install
+sudo chmod +x ./install
+sudo ./install auto
+sudo apt update
+sudo apt-cache search tomcat
+sudo apt install tomcat9 tomcat9-admin -y
+sudo ufw allow from any to any port 8080 proto tcp
+sudo systemctl enable tomcat9
+sudo systemctl start tomcat9
